@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import type { ReactElement } from 'react';
 import type { NextRouter } from 'next/router';
-import { RouterContext } from 'next/dist/shared/lib/router-context';
+import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime';
 
 const createMockRouter = (router: Partial<NextRouter> = {}) => {
   const mockRouter: NextRouter = {
