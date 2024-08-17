@@ -13,10 +13,10 @@ export function GenreListView(props: Readonly<GenreListViewProps>) {
 	}
 	return (
 		<Fragment>
-			<h1>Genres</h1>
+			<h1 className="my-4 font-bold text-lg">All Genres</h1>
 			<ul>
 			{props.genres.map((genre) => {
-				return <li key={genre.id}><Link href={{pathname: '/', query: { genre: genre.title }}}>{genre.title}</Link></li>
+				return <li key={genre.id}><Link href={{pathname: '/', query: { genre: genre.title }}}>{genre.title} ({genre.movies.length})</Link></li>
 			})}
 			</ul>
 		</Fragment>

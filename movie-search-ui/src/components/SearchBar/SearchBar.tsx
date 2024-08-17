@@ -22,11 +22,10 @@ export function SearchBar() {
 		router.push('/?' + searchParams.toString(), undefined, { shallow: true });
 	}
 
-	console.log('Genre is ' + genre );
 	return (
 		<form className="mt-4" onSubmit={handleSubmit}>
-			<div className="grid mb-6 gap-6">
-				<input className="border border-gray-600 rounded w-full" type="text" name="title" placeholder="Search" value={searchText} onChange={handleSearchChange}/>
+			<div className="grid grid-cols-5 mb-6 gap-6 w-full">
+				<input className="border border-gray-600 rounded w-full col-span-4" type="text" name="title" placeholder="Search" value={searchText} onChange={handleSearchChange}/>
 				<div>
 					<button type="submit" className="bg-gray-100 hover:bg-gray-300 rounded py-1 px-4">Search</button>
 				</div>

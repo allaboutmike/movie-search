@@ -17,6 +17,6 @@ export function MovieList() {
 	};
 
 	return (
-		<MovieListView results={data} search={title} page={page} setPageNumber={handleSetPage}/>
+		<MovieListView results={data} search={title} page={page} genre={genre} setPageNumber={handleSetPage}/>
 	)
 };

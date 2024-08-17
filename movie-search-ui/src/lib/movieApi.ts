@@ -76,6 +76,5 @@ export async function getGenre(id: string): Promise<Genre> {
 export async function getGenres(): Promise<Array<Genre>> {
 	const token = await getAuthToken();
 	const response = await instance.get("/genres/movies", {headers: { Authorization: `Bearer ${token}`}});
-	console.log(response);
 	return response.data.data as Array<Genre>;
 }
