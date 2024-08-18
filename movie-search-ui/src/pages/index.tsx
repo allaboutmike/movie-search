@@ -6,10 +6,10 @@ import { SearchBar } from 'src/components/SearchBar';
 const Home: NextPage = () => {
   return (
     <Fragment>
-			<SearchBar />
-			<Suspense fallback={<div>Loading... </div>}>
-				<MovieList />
-			</Suspense>
+      <SearchBar />
+      <Suspense fallback={<div>Loading... </div>}>
+        <MovieList />
+      </Suspense>
     </Fragment>
   );
 };
