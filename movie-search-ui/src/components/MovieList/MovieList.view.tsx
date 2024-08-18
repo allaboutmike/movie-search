@@ -3,8 +3,8 @@ import { MovieRow } from '../MovieRow';
 import { SearchResult } from 'src/lib/movieApi';
 
 type MovieListProps = {
-  search: string | undefined;
-  genre: string | undefined;
+  search: string | null;
+  genre: string | null;
   error: string | undefined;
   results: SearchResult | undefined;
   page: number;

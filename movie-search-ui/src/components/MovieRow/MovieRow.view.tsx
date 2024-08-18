@@ -20,7 +20,12 @@ export function MovieRow(props: Readonly<MovieRowProps>) {
             />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium truncate">{props.movie.title}</p>
+            <p
+              className="text-sm font-medium truncate"
+              data-testid={props.movie.id}
+            >
+              {props.movie.title}
+            </p>
             <p className="text-sm text-gray-600">
               Rating: {props.movie.rating}
             </p>

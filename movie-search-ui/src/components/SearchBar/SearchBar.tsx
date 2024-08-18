@@ -23,10 +23,11 @@ export function SearchBar() {
   };
 
   return (
-    <form className="mt-4" onSubmit={handleSubmit}>
+    <form data-testid="search-form" className="mt-4" onSubmit={handleSubmit}>
       <div className="grid grid-cols-5 mb-6 gap-6 w-full">
         <input
           className="border border-gray-600 rounded w-full col-span-4"
+          data-testid="search-input"
           type="text"
           name="title"
           placeholder="Search"

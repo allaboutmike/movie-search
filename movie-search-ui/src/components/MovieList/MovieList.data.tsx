@@ -6,8 +6,8 @@ import { useMovieSearch } from 'src/lib/useMovieSearch';
 
 export function MovieList() {
   const searchParams = useSearchParams();
-  const title = searchParams.get('title') ?? undefined;
-  const genre = searchParams.get('genre') ?? undefined;
+  const title = searchParams.get('title');
+  const genre = searchParams.get('genre');
   const [page, setPage] = useState(1);
 
   const [data, error] = useMovieSearch(title, genre, page);

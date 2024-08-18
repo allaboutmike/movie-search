@@ -13,6 +13,7 @@ module.exports = createJestConfig({
     '!**/*.d.ts',
     '!**/node_modules/**',
   ],
+	modulePaths:  [compilerOptions.baseUrl],
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',

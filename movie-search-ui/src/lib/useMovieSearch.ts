@@ -3,8 +3,8 @@ import { search, SearchResult } from './movieApi';
 import { useQueryClient } from '@tanstack/react-query';
 
 export function useMovieSearch(
-  title: string | undefined,
-  genre: string | undefined,
+  title: string | null,
+  genre: string | null,
   page: number
 ): [SearchResult | undefined, string | undefined] {
   const [data, setData] = useState<SearchResult | undefined>(undefined);
@@ -13,8 +13,8 @@ export function useMovieSearch(
 
   useEffect(() => {
     const searchMovies = async (
-      title: string | undefined,
-      genre: string | undefined,
+      title: string | null,
+      genre: string | null,
       page: number
     ) => {
       try {
