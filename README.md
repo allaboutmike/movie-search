@@ -2,10 +2,10 @@
 
 
 ## Overview
-A simple movie search application, written in React and using the NextJS stack. This application queries a REST API to get a list of movies, which can be filtered down by genre. It includes some basic paging within the movie list that is returned, as well as a dedicated page for each movie with some details about it.
+A simple movie search application, written in React using the NextJS stack. This application queries a REST API to get a list of movies, which can be filtered down by genre. It includes some basic paging within the movie list, as well as a dedicated page for each movie with some details about it.
 
 
-I decided to stick with only the tech stack that came with the NextJS starter.dev pack, and I didn't import any other third party libraries or utilities. I felt that for this demo application it would be best to stick with just the basics. I also appreciated the separation of concerns that the starter had in its file structure, and decided to keep that as much as possible. I've not seen that particular pattern applied before, but it was fun to work with. One thing that I did do is update the libraries in the starter to match the latest stable.
+I decided to stick with only the tech stack that came with the NextJS starter.dev pack, and I didn't import any other third party libraries or utilities. I felt that for this demo application it would be best to stick with just the basics. I also appreciated the separation of concerns that the starter had in its file structure, and decided to keep to that as much as possible. I've not seen that particular pattern applied before, but it was fun to work with. One thing that I did do is update the libraries in the starter to match the latest stable.
 
 
 ### Highlight
