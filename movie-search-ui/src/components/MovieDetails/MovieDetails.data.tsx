@@ -7,10 +7,10 @@ type MovieDetailsDataProps = {
 };
 
 export function MovieDetails(props: Readonly<MovieDetailsDataProps>) {
-  const { data, isLoading } = useQuery<Movie, Error>({
+  const { data, isLoading, error } = useQuery<Movie, Error>({
     queryKey: ['movie', props.id],
     queryFn: async () => getMovie(props.id),
   });
 
-  return <MovieDetailsView movie={data} isLoading={isLoading} />;
+  return <MovieDetailsView movie={data} isLoading={isLoading} error={error} />;
 }

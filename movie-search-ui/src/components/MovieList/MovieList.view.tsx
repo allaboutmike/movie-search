@@ -5,6 +5,7 @@ import { SearchResult } from 'src/lib/movieApi';
 type MovieListProps = {
   search: string | undefined;
   genre: string | undefined;
+  error: string | undefined;
   results: SearchResult | undefined;
   page: number;
   setPageNumber: (page: number) => void;
@@ -32,6 +33,9 @@ export function MovieListView(props: Readonly<MovieListProps>) {
   }
 
   if (!hasMovies) {
+    if (props.error) {
+      return <div> Oh no! An error when searching! </div>;
+    }
     return <div>Nothing to show here... yet ;)</div>;
   }
 

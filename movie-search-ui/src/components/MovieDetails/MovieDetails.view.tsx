@@ -6,6 +6,7 @@ import { Movie } from 'src/lib/movieApi';
 type MovieDetailsViewProps = {
   movie: Movie | undefined;
   isLoading: boolean;
+  error: Error | null;
 };
 
 export function MovieDetailsView(props: Readonly<MovieDetailsViewProps>) {
@@ -14,6 +15,9 @@ export function MovieDetailsView(props: Readonly<MovieDetailsViewProps>) {
   }
 
   if (!props.movie) {
+    if (props.error) {
+      return <div> Oh no! An error when getting movie details </div>;
+    }
     return <h1>Nothing here :(</h1>;
   }
 

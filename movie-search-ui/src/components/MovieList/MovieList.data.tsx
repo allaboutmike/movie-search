@@ -10,7 +10,7 @@ export function MovieList() {
   const genre = searchParams.get('genre') ?? undefined;
   const [page, setPage] = useState(1);
 
-  const data = useMovieSearch(title, genre, page);
+  const [data, error] = useMovieSearch(title, genre, page);
 
   const handleSetPage = (page: number) => {
     setPage(page);
@@ -19,6 +19,7 @@ export function MovieList() {
   return (
     <MovieListView
       results={data}
+      error={error}
       search={title}
       page={page}
       genre={genre}

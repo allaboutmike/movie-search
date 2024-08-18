@@ -6,8 +6,9 @@ export function useMovieSearch(
   title: string | undefined,
   genre: string | undefined,
   page: number
-) {
+): [SearchResult | undefined, string | undefined] {
   const [data, setData] = useState<SearchResult | undefined>(undefined);
+  const [error, setError] = useState<string | undefined>(undefined);
   const queryClient = useQueryClient();
 
   useEffect(() => {
@@ -16,14 +17,19 @@ export function useMovieSearch(
       genre: string | undefined,
       page: number
     ) => {
-      const data = await queryClient.fetchQuery({
-        queryKey: ['search', title, genre],
-        queryFn: async (): Promise<SearchResult> => search(title, genre, page),
-      });
-      setData(data);
+      try {
+        const data = await queryClient.fetchQuery({
+          queryKey: ['search', title, genre],
+          queryFn: async (): Promise<SearchResult> =>
+            search(title, page, genre),
+        });
+        setData(data);
+      } catch (e: any) {
+        setError(e.message);
+      }
     };
     searchMovies(title, genre, page);
   }, [title, genre, page, queryClient]);
 
-  return data;
+  return [data, error];
 }

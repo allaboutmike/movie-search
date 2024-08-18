@@ -53,8 +53,8 @@ async function getAuthToken(): Promise<string> {
 
 export async function search(
   title: string | undefined,
-  genre: string | undefined = undefined,
-  page: number
+  page: number,
+  genre: string | undefined = undefined
 ): Promise<SearchResult> {
   const token = await getAuthToken();
   const searchParams = new URLSearchParams();
